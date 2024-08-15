@@ -1,0 +1,25 @@
+class Solution {
+    public int majorityElement(int[] nums) {
+        Arrays.sort(nums);
+        int i=0,r=0,k=0,c=1;
+        int n=nums.length;
+        if(n==1)
+        return nums[0];
+        while(i<n-1)
+        {
+            if(nums[i]==nums[i+1])
+            {
+                c++;
+            }
+            else
+            c=1;
+            if(c>r)
+            {
+                r=c;
+                k=nums[i];
+            }
+            i++;
+        }
+        return k;
+    }
+}
